@@ -1,3 +1,4 @@
+<!-- Updated index.html with Logo, About Section, and Product Images -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,791 +6,88 @@
   <title>Krishna Fasion - Online Dress Store</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --primary: #ff4b6e;
-      --primary-dark: #e63f60;
-      --bg: #f7f7f7;
-      --text: #222;
-      --muted: #777;
-      --card-bg: #ffffff;
-      --shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-      --radius-lg: 18px;
-    }
+    body {font-family: sans-serif; margin: 0; background: #f5f5f5;}
+    header {background: white; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}    
+    .logo {display: flex; align-items: center; gap: 10px; font-size: 1.4rem; font-weight: bold; color:#ff3366;}
+    .logo img {height: 40px; border-radius: 50%;}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    .hero {padding: 40px 20px; background: linear-gradient(135deg,#ff9a9e,#fecfef); color: #fff; text-align: center;}
 
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
+    .products {display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 20px; padding: 20px; max-width: 1100px; margin: auto;}
+    .product {background:white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}   
+    .product img {width: 100%; border-radius: 10px; height: 250px; object-fit: cover;}
+    .product h3 {margin: 8px 0 4px;}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    #about {padding: 40px 20px; background:white; margin:20px auto; max-width: 900px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);} 
+    #about h2 {color:#ff3366; margin-bottom:10px;}
 
-    /* Navbar */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
-    }
-
-    .nav-inner {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .logo {
-      font-weight: 800;
-      font-size: 1.4rem;
-      letter-spacing: 0.04em;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .logo-pill {
-      width: 30px;
-      height: 30px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .cart-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.06);
-      padding: 6px 12px;
-      background: #fff;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    .cart-count {
-      background: var(--primary);
-      color: #fff;
-      border-radius: 999px;
-      padding: 2px 7px;
-      font-size: 0.7rem;
-    }
-
-    .primary-btn {
-      border-radius: 999px;
-      border: none;
-      padding: 8px 16px;
-      background: var(--primary);
-      color: #fff;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-
-    .primary-btn:hover {
-      background: var(--primary-dark);
-    }
-
-    /* Hero */
-    .hero {
-      max-width: 1140px;
-      margin: 18px auto 0;
-      padding: 18px 16px 26px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 24px;
-      align-items: center;
-    }
-
-    @media (max-width: 840px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hero-text h1 {
-      font-size: clamp(2.1rem, 4vw, 2.7rem);
-      margin-bottom: 10px;
-    }
-
-    .hero-text h1 span {
-      color: var(--primary);
-    }
-
-    .hero-text p {
-      color: var(--muted);
-      margin-bottom: 16px;
-      max-width: 480px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 16px;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .badge {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(255, 75, 110, 0.06);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    .link-btn {
-      font-size: 0.85rem;
-      color: var(--muted);
-      cursor: pointer;
-      border: none;
-      background: transparent;
-      padding: 0;
-    }
-
-    .hero-note {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .hero-image {
-      background: radial-gradient(circle at top left, #ffdde1, #ee9ca7);
-      border-radius: 30px;
-      min-height: 230px;
-      padding: 16px;
-      position: relative;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero-tag {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(255, 255, 255, 0.85);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.78rem;
-    }
-
-    .hero-price-card {
-      position: absolute;
-      bottom: 16px;
-      right: 16px;
-      background: rgba(255, 255, 255, 0.9);
-      padding: 8px 12px;
-      border-radius: 18px;
-      font-size: 0.78rem;
-      min-width: 120px;
-    }
-
-    .hero-figure {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      pointer-events: none;
-    }
-
-    .hero-dress {
-      width: 60%;
-      max-width: 220px;
-      height: 85%;
-      max-height: 260px;
-      border-radius: 140px 140px 40px 40px;
-      background: linear-gradient(160deg, #fff, #ffe6ea);
-      border: 3px solid rgba(255, 255, 255, 0.6);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    }
-
-    /* Filters */
-    .filters {
-      max-width: 1140px;
-      margin: 0 auto;
-      padding: 0 16px 10px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .filters-left {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .filter-pill {
-      border-radius: 999px;
-      padding: 6px 12px;
-      border: 1px solid rgba(0, 0, 0, 0.07);
-      background: #fff;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-
-    .filter-pill.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-    }
-
-    .filters-right {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .search-input {
-      border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      min-width: 180px;
-      outline: none;
-    }
-
-    select {
-      border-radius: 999px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      outline: none;
-      background: #fff;
-    }
-
-    /* Products */
-    .products-section {
-      max-width: 1140px;
-      margin: 0 auto 40px;
-      padding: 0 16px;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-      gap: 18px;
-    }
-
-    .product-card {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
-    }
-
-    .product-img-wrapper {
-      position: relative;
-      padding: 12px;
-      background: linear-gradient(135deg, #fff5f7, #ffeef2);
-    }
-
-    .product-img {
-      width: 100%;
-      border-radius: 14px;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
-      background: #ddd;
-    }
-
-    .product-tag {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      background: rgba(0, 0, 0, 0.72);
-      color: #fff;
-      font-size: 0.72rem;
-      padding: 3px 8px;
-      border-radius: 999px;
-    }
-
-    .product-body {
-      padding: 10px 12px 12px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      flex: 1;
-    }
-
-    .product-title {
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .product-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    .product-price {
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .product-old-price {
-      text-decoration: line-through;
-      font-size: 0.75rem;
-      color: #999;
-      margin-left: 4px;
-    }
-
-    .product-footer {
-      margin-top: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .add-btn {
-      border-radius: 999px;
-      border: none;
-      padding: 6px 10px;
-      background: var(--primary);
-      color: #fff;
-      font-size: 0.8rem;
-      cursor: pointer;
-      flex: 1;
-    }
-
-    .add-btn:hover {
-      background: var(--primary-dark);
-    }
-
-    .size-pill {
-      font-size: 0.72rem;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: rgba(0, 0, 0, 0.04);
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--muted);
-      padding: 20px 16px 25px;
-      border-top: 1px solid rgba(0, 0, 0, 0.06);
-      background: #fff;
-    }
-
-    @media (max-width: 540px) {
-      .nav-links {
-        display: none;
-      }
-      .hero {
-        padding-top: 12px;
-      }
-      .hero-image {
-        min-height: 210px;
-      }
-      .filters {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .filters-right {
-        width: 100%;
-      }
-      .search-input,
-      select {
-        flex: 1;
-      }
-    }
+    footer {text-align:center; padding:20px; background:white; margin-top:20px;}    
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="navbar">
-    <div class="nav-inner">
-      <div class="logo">
-        <div class="logo-pill"></div>
-        <span>Krishna Fasion</span>
-      </div>
-      <nav class="nav-links">
-        <a href="#products">New Arrivals</a>
-        <a href="#products">Women</a>
-        <a href="#products">Men</a>
-        <a href="#products">Kids</a>
-      </nav>
-      <div class="nav-right">
-        <button class="cart-btn">
-          🛒 Cart
-          <span class="cart-count" id="cartCount">0</span>
-        </button>
-        <button class="primary-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-          Shop now
-        </button>
-      </div>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1>
-        Welcome to <span>Krishna Fasion</span>
-      </h1>
-      <p>
-        Trendy T-shirts, jeans aur saree – best quality & best price, sirf Krishna Fasion par.
-      </p>
-      <div class="hero-badges">
-        <span class="badge">Free size exchange</span>
-        <span class="badge">COD Available*</span>
-        <span class="badge">Fast Shipping</span>
-      </div>
-      <div class="hero-actions">
-        <button class="primary-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
-          Browse Collection
-        </button>
+<header>
+  <div class="logo">
+    <img src="https://i.postimg.cc/W1hZQ5Zk/logo.png" alt="Logo" />
+    Krishna Fasion
+  </div>
+  <a href="https://wa.me/91XXXXXXXXXX" style="text-decoration:none; color:#ff3366; font-weight:bold;">Order on WhatsApp</a>
+</header>
 
-        <!-- Yahan apna WhatsApp link daalo -->
-        <a class="link-btn" href="https://wa.me/91XXXXXXXXXX" target="_blank">
-          🔗 Order / WhatsApp par baat karein
-        </a>
-      </div>
-      <p class="hero-note">
-        Note: WhatsApp number change karne ke liye upar link me <code>91XXXXXXXXXX</code> ki jagah apna number daalo.
-      </p>
-    </div>
+<section class="hero">
+  <h1>Welcome to Krishna Fasion</h1>
+  <p>Latest T‑Shirts, Jeans & Sarees at best prices</p>
+</section>
 
-    <div class="hero-image">
-      <div class="hero-tag">Krishna Fasion Exclusive</div>
-      <div class="hero-price-card">
-        <div style="font-weight: 600; margin-bottom: 2px;">Starting from</div>
-        <div style="font-size: 1.1rem; font-weight: 800;">₹399</div>
-        <div style="font-size: 0.7rem; color: var(--muted);">New arrivals daily</div>
-      </div>
-      <div class="hero-figure">
-        <div class="hero-dress"></div>
-      </div>
-    </div>
-  </section>
+<h2 style="text-align:center; margin-top:30px; color:#ff3366;">Our Products</h2>
+<div class="products">
 
-  <!-- Filters -->
-  <section class="filters">
-    <div class="filters-left">
-      <button class="filter-pill active" data-category="all">All</button>
-      <button class="filter-pill" data-category="women">Women</button>
-      <button class="filter-pill" data-category="men">Men</button>
-      <button class="filter-pill" data-category="kids">Kids</button>
-    </div>
-    <div class="filters-right">
-      <input
-        type="text"
-        class="search-input"
-        id="searchInput"
-        placeholder="Search T-shirt, jeans, saree..."
-      />
-      <select id="sortSelect">
-        <option value="default">Sort: Default</option>
-        <option value="low-high">Price: Low to High</option>
-        <option value="high-low">Price: High to Low</option>
-      </select>
-    </div>
-  </section>
+  <div class="product">
+    <img src="https://i.postimg.cc/m2C1WGLM/tshirt1.jpg" />
+    <h3>T‑Shirt (Size S)</h3>
+    <p>₹399</p>
+  </div>
 
-  <!-- Products -->
-  <main class="products-section" id="products">
-    <div class="products-grid" id="productsGrid">
+  <div class="product">
+    <img src="https://i.postimg.cc/JzMRtD2Q/tshirt2.jpg" />
+    <h3>T‑Shirt (Size M)</h3>
+    <p>₹499</p>
+  </div>
 
-      <!-- Product-1: T-shirt, 399, size S -->
-      <article
-        class="product-card"
-        data-category="men"
-        data-name="T-shirt Basic S"
-        data-price="399"
-      >
-        <div class="product-img-wrapper">
-          <img
-            class="product-img"
-            src="https://via.placeholder.com/300x400?text=T-shirt"
-            alt="T-shirt Basic S"
-          />
-          <span class="product-tag">New</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">T-shirt (Size S)</h3>
-          <div class="product-meta">
-            <span>Men • Casual wear</span>
-            <span>★ 4.5</span>
-          </div>
-          <div class="product-meta">
-            <div>
-              <span class="product-price">₹399</span>
-            </div>
-            <span class="size-pill">S</span>
-          </div>
-          <div class="product-footer">
-            <button class="add-btn">Add to cart</button>
-            <span style="font-size: 0.72rem; color: var(--muted);">
-              Daily use ke liye best
-            </span>
-          </div>
-        </div>
-      </article>
+  <div class="product">
+    <img src="https://i.postimg.cc/Z5mmv1bL/tshirt3.jpg" />
+    <h3>T‑Shirt (Size L)</h3>
+    <p>₹699</p>
+  </div>
 
-      <!-- Product-2: T-shirt, 499, size M -->
-      <article
-        class="product-card"
-        data-category="men"
-        data-name="T-shirt Regular M"
-        data-price="499"
-      >
-        <div class="product-img-wrapper">
-          <img
-            class="product-img"
-            src="https://via.placeholder.com/300x400?text=T-shirt"
-            alt="T-shirt Regular M"
-          />
-          <span class="product-tag">Popular</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">T-shirt (Size M)</h3>
-          <div class="product-meta">
-            <span>Men • Regular fit</span>
-            <span>★ 4.6</span>
-          </div>
-          <div class="product-meta">
-            <div>
-              <span class="product-price">₹499</span>
-            </div>
-            <span class="size-pill">M</span>
-          </div>
-          <div class="product-footer">
-            <button class="add-btn">Add to cart</button>
-            <span style="font-size: 0.72rem; color: var(--muted);">
-              Soft cotton fabric
-            </span>
-          </div>
-        </div>
-      </article>
+  <div class="product">
+    <img src="https://i.postimg.cc/150X8jnB/jeans1.jpg" />
+    <h3>Jeans (Size M)</h3>
+    <p>₹999</p>
+  </div>
 
-      <!-- Product-3: T-shirt, 699, size L -->
-      <article
-        class="product-card"
-        data-category="men"
-        data-name="T-shirt Premium L"
-        data-price="699"
-      >
-        <div class="product-img-wrapper">
-          <img
-            class="product-img"
-            src="https://via.placeholder.com/300x400?text=T-shirt"
-            alt="T-shirt Premium L"
-          />
-          <span class="product-tag">Premium</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">T-shirt (Size L)</h3>
-          <div class="product-meta">
-            <span>Men • Premium feel</span>
-            <span>★ 4.8</span>
-          </div>
-          <div class="product-meta">
-            <div>
-              <span class="product-price">₹699</span>
-            </div>
-            <span class="size-pill">L</span>
-          </div>
-          <div class="product-footer">
-            <button class="add-btn">Add to cart</button>
-            <span style="font-size: 0.72rem; color: var(--muted);">
-              Party & casual dono ke liye
-            </span>
-          </div>
-        </div>
-      </article>
+  <div class="product">
+    <img src="https://i.postimg.cc/sgLbB0Zb/jeans2.jpg" />
+    <h3>Jeans (Size L)</h3>
+    <p>₹1299</p>
+  </div>
 
-      <!-- Product-4: jeans, 999, size M -->
-      <article
-        class="product-card"
-        data-category="men"
-        data-name="Jeans Slim M"
-        data-price="999"
-      >
-        <div class="product-img-wrapper">
-          <img
-            class="product-img"
-            src="https://via.placeholder.com/300x400?text=Jeans"
-            alt="Jeans Slim M"
-          />
-          <span class="product-tag">Best seller</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">Jeans (Size M)</h3>
-          <div class="product-meta">
-            <span>Men • Slim fit</span>
-            <span>★ 4.7</span>
-          </div>
-          <div class="product-meta">
-            <div>
-              <span class="product-price">₹999</span>
-            </div>
-            <span class="size-pill">M</span>
-          </div>
-          <div class="product-footer">
-            <button class="add-btn">Add to cart</button>
-            <span style="font-size: 0.72rem; color: var(--muted);">
-              Strong & comfortable
-            </span>
-          </div>
-        </div>
-      </article>
+  <div class="product">
+    <img src="https://i.postimg.cc/hPTQF9Rf/saree1.jpg" />
+    <h3>Saree (Free Size)</h3>
+    <p>₹999</p>
+  </div>
 
-      <!-- Product-5: jeans, 1299, size L -->
-      <article
-        class="product-card"
-        data-category="men"
-        data-name="Jeans Regular L"
-        data-price="1299"
-      >
-        <div class="product-img-wrapper">
-          <img
-            class="product-img"
-            src="https://via.placeholder.com/300x400?text=Jeans"
-            alt="Jeans Regular L"
-          />
-          <span class="product-tag">New Arrival</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">Jeans (Size L)</h3>
-          <div class="product-meta">
-            <span>Men • Regular fit</span>
-            <span>★ 4.6</span>
-          </div>
-          <div class="product-meta">
-            <div>
-              <span class="product-price">₹1,299</span>
-            </div>
-            <span class="size-pill">L</span>
-          </div>
-          <div class="product-footer">
-            <button class="add-btn">Add to cart</button>
-            <span style="font-size: 0.72rem; color: var(--muted);">
-              Everyday & office use
-            </span>
-          </div>
-        </div>
-      </article>
+</div>
 
-      <!-- Product-6: saree, 999, free size -->
-      <article
-        class="product-card"
-        data-category="women"
-        data-name="Saree Elegant Free Size"
-        data-price="999"
-      >
-        <div class="product-img-wrapper">
-          <img
-            class="product-img"
-            src="https://via.placeholder.com/300x400?text=Saree"
-            alt="Saree Free Size"
-          />
-          <span class="product-tag">Saree</span>
-        </div>
-        <div class="product-body">
-          <h3 class="product-title">Saree (Free size)</h3>
-          <div class="product-meta">
-            <span>Women • Traditional wear</span>
-            <span>★ 4.7</span>
-          </div>
-          <div class="product-meta">
-            <div>
-              <span class="product-price">₹999</span>
-            </div>
-            <span class="size-pill">Free size</span>
-          </div>
-          <div class="product-footer">
-            <button class="add-btn">Add to cart</button>
-            <span style="font-size: 0.72rem; color: var(--muted);">
-              Functions & festival ke liye
-            </span>
-          </div>
-        </div>
-      </article>
+<section id="about">
+  <h2>About Krishna Fasion</h2>
+  <p>Krishna Fasion ek trusted online clothing store hai jahan aapko trendy T‑shirts, stylish jeans aur beautiful sarees best price me milti hain. Hum quality par 100% focus karte hain aur har product ko personally check karte hain. Aap WhatsApp par direct order kar sakte hain. Fast delivery, easy exchange aur friendly support hamari priority hai.</p>
+</section>
 
-    </div>
-  </main>
+<footer>
+  © 2025 Krishna Fasion. All Rights Reserved.
+</footer>
 
-  <footer>
-    © <span id="year"></span> Krishna Fasion. All rights reserved. <br />
-    Made with ❤ by Krishna.
-  </footer>
-
-  <script>
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Cart count
-    const cartCountEl = document.getElementById("cartCount");
-    let cartCount = 0;
-
-    document.querySelectorAll(".add-btn").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        cartCount++;
-        cartCountEl.textContent = cartCount;
-      });
-    });
-
-    // Filters
-    const filterButtons = document.querySelectorAll(".filter-pill");
-    const products = Array.from(
-      document.querySelectorAll(".product-card")
-    );
-    const searchInput = document.getElementById("searchInput");
-    const sortSelect = document.getElementById("sortSelect");
-    const productsGrid = document.getElementById("productsGrid");
-
-    let activeCategory =
+</body>
+</html>
