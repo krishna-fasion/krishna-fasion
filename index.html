@@ -1,790 +1,93 @@
+<!-- Updated index.html with Logo, About Section, and Product Images -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Desi Swad - Homemade Cookies & Treats</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <title>Krishna Fasion - Online Dress Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #fdf6ec;
-      --card: #ffffff;
-      --accent: #e26a2c;
-      --accent-soft: #ffe0c3;
-      --text-main: #3a2715;
-      --text-soft: #745234;
-      --border-soft: #f0d3a9;
-      --radius-lg: 18px;
-      --radius-xl: 26px;
-      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.12);
-      --shadow-chip: 0 4px 12px rgba(0, 0, 0, 0.08);
-    }
+    body {font-family: sans-serif; margin: 0; background: #f5f5f5;}
+    header {background: white; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}    
+    .logo {display: flex; align-items: center; gap: 10px; font-size: 1.4rem; font-weight: bold; color:#ff3366;}
+    .logo img {height: 40px; border-radius: 50%;}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
+    .hero {padding: 40px 20px; background: linear-gradient(135deg,#ff9a9e,#fecfef); color: #fff; text-align: center;}
 
-    body {
-      background: radial-gradient(circle at top left, #ffe8c9 0, #fdf6ec 45%, #fdebd7 100%);
-      color: var(--text-main);
-    }
+    .products {display: grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap: 20px; padding: 20px; max-width: 1100px; margin: auto;}
+    .product {background:white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}   
+    .product img {width: 100%; border-radius: 10px; height: 250px; object-fit: cover;}
+    .product h3 {margin: 8px 0 4px;}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    #about {padding: 40px 20px; background:white; margin:20px auto; max-width: 900px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1);} 
+    #about h2 {color:#ff3366; margin-bottom:10px;}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* TOP BAR */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(253, 246, 236, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(224, 185, 135, 0.35);
-    }
-
-    .nav {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0.6rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-    }
-
-    .brand-area {
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .logo-circle {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #ffe7c8, #d27a34);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow-chip);
-      overflow: hidden;
-    }
-
-    .logo-initials {
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: #4d260f;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .brand-name {
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .brand-tag {
-      font-size: 0.75rem;
-      color: var(--text-soft);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.92rem;
-    }
-
-    .nav-links a {
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      transition: background 0.2s ease, transform 0.1s ease;
-    }
-
-    .nav-links a:hover {
-      background: rgba(255, 205, 160, 0.7);
-      transform: translateY(-1px);
-    }
-
-    .nav-cta {
-      padding: 0.45rem 1.1rem;
-      border-radius: 999px;
-      border: none;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.9rem;
-      font-weight: 600;
-      box-shadow: var(--shadow-chip);
-      cursor: pointer;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      background: #c65418;
-      transform: translateY(-1px);
-      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.18);
-    }
-
-    /* HERO */
-    main {
-      max-width: 1180px;
-      margin: 1.5rem auto 2.2rem;
-      padding: 0 1rem 1rem;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
-      gap: 2.3rem;
-      align-items: center;
-    }
-
-    .hero-left-title {
-      font-size: clamp(2.3rem, 3.2vw + 1rem, 3rem);
-      line-height: 1.15;
-      margin-bottom: 0.8rem;
-    }
-
-    .hero-left-title span {
-      color: var(--accent);
-    }
-
-    .hero-sub {
-      font-size: 0.98rem;
-      color: var(--text-soft);
-      margin-bottom: 1rem;
-      max-width: 32rem;
-    }
-
-    .hero-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.55rem;
-      margin-bottom: 1.1rem;
-    }
-
-    .chip {
-      padding: 0.35rem 0.8rem;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--border-soft);
-      font-size: 0.8rem;
-      box-shadow: var(--shadow-chip);
-    }
-
-    .chip strong {
-      color: var(--accent);
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      align-items: center;
-      margin-bottom: 0.7rem;
-    }
-
-    .btn-primary {
-      padding: 0.65rem 1.4rem;
-      border-radius: 999px;
-      background: var(--accent);
-      border: none;
-      color: #fff;
-      font-weight: 600;
-      font-size: 0.95rem;
-      box-shadow: var(--shadow-soft);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s ease;
-    }
-
-    .btn-primary:hover {
-      background: #c65418;
-      transform: translateY(-1px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
-    }
-
-    .btn-outline {
-      padding: 0.65rem 1.2rem;
-      border-radius: 999px;
-      border: 1px solid var(--accent);
-      background: rgba(255, 255, 255, 0.6);
-      color: var(--accent);
-      font-weight: 500;
-      font-size: 0.9rem;
-      cursor: pointer;
-    }
-
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-    }
-
-    .hero-right {
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
-      padding: 1.2rem 1.1rem 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-tag-top {
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #b26220;
-      margin-bottom: 0.4rem;
-    }
-
-    .hero-main-image {
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 0.7rem;
-      position: relative;
-      background: linear-gradient(135deg, #ffe3c5, #f0aa5f);
-      height: 190px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-main-placeholder {
-      font-weight: 600;
-      font-size: 1rem;
-      color: #5a3213;
-      text-align: center;
-      padding: 0 1rem;
-    }
-
-    .hero-overlay-badge {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      padding: 0.35rem 0.7rem;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 999px;
-      font-size: 0.78rem;
-      box-shadow: var(--shadow-chip);
-    }
-
-    .hero-list {
-      font-size: 0.86rem;
-      color: var(--text-soft);
-      margin-bottom: 0.4rem;
-      padding-left: 1rem;
-    }
-
-    .hero-list li {
-      margin-bottom: 0.2rem;
-    }
-
-    .hero-small-note {
-      font-size: 0.8rem;
-      padding: 0.45rem 0.7rem;
-      border-radius: 10px;
-      background: #fff7dc;
-      border: 1px dashed #e19a16;
-      margin-top: 0.4rem;
-    }
-
-    /* SECTION HEADER */
-    section {
-      margin-top: 2.4rem;
-    }
-
-    .section-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 0.6rem;
-      margin-bottom: 1rem;
-    }
-
-    .section-title {
-      font-size: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.88rem;
-      color: var(--text-soft);
-      max-width: 24rem;
-    }
-
-    /* PRODUCTS */
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.2rem;
-    }
-
-    .product-card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
-      padding: 0.9rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-    }
-
-    .product-img-wrap {
-      border-radius: 14px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #ffe7cd, #f8b36b);
-      height: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 0.4rem;
-    }
-
-    .product-placeholder {
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-align: center;
-      padding: 0 0.6rem;
-      color: #613516;
-    }
-
-    .product-name {
-      font-weight: 700;
-      font-size: 1rem;
-    }
-
-    .product-desc {
-      font-size: 0.82rem;
-      color: var(--text-soft);
-    }
-
-    .product-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      font-size: 0.86rem;
-      margin-top: 0.2rem;
-    }
-
-    .price {
-      font-weight: 700;
-      color: #c54a10;
-    }
-
-    .weight {
-      font-size: 0.8rem;
-      color: #8a5c33;
-    }
-
-    .product-tagline {
-      font-size: 0.8rem;
-      color: var(--text-soft);
-    }
-
-    .product-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-      margin-top: 0.3rem;
-    }
-
-    .btn-buy {
-      flex: 1;
-      padding: 0.5rem 0.7rem;
-      border-radius: 999px;
-      border: none;
-      background: #25d366;
-      color: #fff;
-      font-size: 0.84rem;
-      font-weight: 600;
-      cursor: pointer;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.25rem;
-      box-shadow: var(--shadow-chip);
-    }
-
-    .btn-buy:hover {
-      filter: brightness(0.96);
-    }
-
-    .min-order {
-      font-size: 0.76rem;
-      color: var(--text-soft);
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 1.2rem;
-    }
-
-    .card {
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border-soft);
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: var(--text-soft);
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.4rem;
-      color: var(--text-main);
-    }
-
-    .card ul {
-      padding-left: 1.1rem;
-      margin: 0.4rem 0;
-    }
-
-    .card li {
-      margin-bottom: 0.25rem;
-    }
-
-    .badge-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-      font-size: 0.78rem;
-    }
-
-    .badge {
-      padding: 0.28rem 0.6rem;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      border: 1px solid var(--border-soft);
-    }
-
-    /* CONTACT */
-    .contact-card {
-      max-width: 520px;
-    }
-
-    .contact-row {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    .contact-label {
-      font-weight: 600;
-      font-size: 0.86rem;
-    }
-
-    .contact-value {
-      font-size: 0.92rem;
-    }
-
-    .contact-note {
-      font-size: 0.8rem;
-      margin-top: 0.6rem;
-      color: var(--text-soft);
-      background: #fff7e0;
-      border-radius: 10px;
-      padding: 0.5rem 0.7rem;
-      border: 1px dashed #e39f20;
-    }
-
-    /* FOOTER */
-    footer {
-      padding: 1.2rem 1rem 1.6rem;
-      text-align: center;
-      font-size: 0.78rem;
-      color: var(--text-soft);
-    }
-
-    /* FLOATING WHATSAPP */
-    .floating-wa {
-      position: fixed;
-      right: 1rem;
-      bottom: 1rem;
-      z-index: 120;
-    }
-
-    .floating-wa a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 54px;
-      height: 54px;
-      border-radius: 999px;
-      background: #25d366;
-      box-shadow: var(--shadow-soft);
-      font-size: 1.8rem;
-      color: #fff;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      .hero-right {
-        order: -1;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-      }
-      .nav {
-        padding-inline: 0.8rem;
-      }
-      .brand-name {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-left-title {
-        font-size: 2.1rem;
-      }
-    }
+    footer {text-align:center; padding:20px; background:white; margin-top:20px;}    
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header>
-    <div class="nav">
-      <div class="brand-area">
-        <div class="logo-circle">
-          <span class="logo-initials">DS</span>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">Desi Swad</span>
-          <span class="brand-tag">Homemade Cookies &amp; Treats</span>
-        </div>
-      </div>
 
-      <nav class="nav-links">
-        <a href="#products">Products</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header>
+  <div class="logo">
+    <img src="https://i.postimg.cc/W1hZQ5Zk/logo.png" alt="Logo" />
+    Krishna Fasion
+  </div>
+  <a href="https://wa.me/91XXXXXXXXXX" style="text-decoration:none; color:#ff3366; font-weight:bold;">Order on WhatsApp</a>
+</header>
 
-      <button class="nav-cta" onclick="scrollToSection('products')">
-        Order Now
-      </button>
-    </div>
-  </header>
+<section class="hero">
+  <h1>Welcome to Krishna Fasion</h1>
+  <p>Latest T‑Shirts, Jeans & Sarees at best prices</p>
+</section>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div>
-        <h1 class="hero-left-title">
-          Desi <span>Swad</span> ke Ghar-jaisi Fresh Cookies
-        </h1>
-        <p class="hero-sub">
-          Soft, crunchy aur bilkul ghar-jaisa taste. Har cookie chhote batch me freshly bake hoti hai —
-          parties, chai time, gifting sab ke liye perfect.
-        </p>
+<h2 style="text-align:center; margin-top:30px; color:#ff3366;">Our Products</h2>
+<div class="products">
 
-        <div class="hero-chips">
-          <div class="chip"><strong>Same-day</strong> fresh bake* (local)</div>
-          <div class="chip">No extra preservatives</div>
-          <div class="chip">Custom gift boxes available</div>
-        </div>
+  <div class="product">
+    <img src="https://i.postimg.cc/m2C1WGLM/tshirt1.jpg" />
+    <h3>T‑Shirt (Size S)</h3>
+    <p>₹399</p>
+  </div>
 
-        <div class="hero-buttons">
-          <button class="btn-primary" onclick="openWhatsAppGeneral()">
-            💬 WhatsApp par order karein
-          </button>
-          <button class="btn-outline" onclick="scrollToSection('products')">
-            Saare products dekhein
-          </button>
-        </div>
+  <div class="product">
+    <img src="https://i.postimg.cc/JzMRtD2Q/tshirt2.jpg" />
+    <h3>T‑Shirt (Size M)</h3>
+    <p>₹499</p>
+  </div>
 
-        <p class="hero-note">
-          *Same-day bake selected orders ke liye, city ke andar available (terms apply).
-        </p>
-      </div>
+  <div class="product">
+    <img src="https://i.postimg.cc/Z5mmv1bL/tshirt3.jpg" />
+    <h3>T‑Shirt (Size L)</h3>
+    <p>₹699</p>
+  </div>
 
-      <div class="hero-right">
-        <div class="hero-tag-top">Best Sellers • Desi Swad</div>
-        <div class="hero-main-image">
-          <!-- Future: <img src="hero-cookies.jpg" alt="Assorted cookies by Desi Swad" /> -->
-          <div class="hero-main-placeholder">
-            Yahan apni cookies ka main photo add karein (hero-cookies.jpg)
-          </div>
-          <div class="hero-overlay-badge">
-            ⭐ Loved by chai &amp; coffee lovers
-          </div>
-        </div>
-        <ul class="hero-list">
-          <li>Chocolate Chunk Cookies – loaded chocolate flavour</li>
-          <li>Jeera Crunch – light, salty-crisp for daily chai time</li>
-          <li>Atta &amp; Jaggery – thoda healthy, thoda tasty</li>
-        </ul>
-        <div class="hero-small-note">
-          Bulk order (birthday, coaching party, office, festival) ke liye WhatsApp par “BULK” likh kar message karein.
-        </div>
-      </div>
-    </section>
+  <div class="product">
+    <img src="https://i.postimg.cc/150X8jnB/jeans1.jpg" />
+    <h3>Jeans (Size M)</h3>
+    <p>₹999</p>
+  </div>
 
-    <!-- PRODUCTS -->
-    <section id="products">
-      <div class="section-header">
-        <div class="section-title">🍪 Our Cookies</div>
-        <p class="section-subtitle">
-          Apna flavour choose karein, quantity batayein aur seedha WhatsApp par order karein.
-          Simple order, fast reply.
-        </p>
-      </div>
+  <div class="product">
+    <img src="https://i.postimg.cc/sgLbB0Zb/jeans2.jpg" />
+    <h3>Jeans (Size L)</h3>
+    <p>₹1299</p>
+  </div>
 
-      <div class="products-grid">
-        <!-- PRODUCT 1 -->
-        <div class="product-card">
-          <div class="product-img-wrap">
-            <!-- <img src="choco-cookies.jpg" alt="Chocolate Chunk Cookies" /> -->
-            <div class="product-placeholder">
-              Chocolate cookies ka photo (choco-cookies.jpg)
-            </div>
-          </div>
-          <div class="product-name">Chocolate Chunk Cookies</div>
-          <div class="product-desc">
-            Soft &amp; gooey cookies, bade chocolate chunks ke saath – bachchon aur chocolate lovers ke liye perfect.
-          </div>
-          <div class="product-meta">
-            <span class="price">₹199</span>
-            <span class="weight">250 g pack</span>
-          </div>
-          <div class="product-tagline">Party packs &amp; gifting me sabse zyada demand.</div>
-          <div class="product-actions">
-            <button class="btn-buy"
-              onclick="openWhatsAppProduct('Chocolate Chunk Cookies', '250 g pack', 199)">
-              🛒 Order on WhatsApp
-            </button>
-            <span class="min-order">Min: 1 pack</span>
-          </div>
-        </div>
+  <div class="product">
+    <img src="https://i.postimg.cc/hPTQF9Rf/saree1.jpg" />
+    <h3>Saree (Free Size)</h3>
+    <p>₹999</p>
+  </div>
 
-        <!-- PRODUCT 2 -->
-        <div class="product-card">
-          <div class="product-img-wrap">
-            <!-- <img src="butter-cookies.jpg" alt="Classic Butter Cookies" /> -->
-            <div class="product-placeholder">
-              Butter cookies ka photo (butter-cookies.jpg)
-            </div>
-          </div>
-          <div class="product-name">Classic Butter Cookies</div>
-          <div class="product-desc">
-            Rich buttery taste, halka sa crunch – ghar ki chai ke saath roz khaane layak.
-          </div>
-          <div class="product-meta">
-            <span class="price">₹179</span>
-            <span class="weight">300 g box</span>
-          </div>
-          <div class="product-tagline">Family pack – sabko pasand aane wala flavour.</div>
-          <div class="product-actions">
-            <button class="btn-buy"
-              onclick="openWhatsAppProduct('Classic Butter Cookies', '300 g box', 179)">
-              🛒 Order on WhatsApp
-            </button>
-            <span class="min-order">Min: 1 box</span>
-          </div>
-        </div>
+</div>
 
-        <!-- PRODUCT 3 -->
-        <div class="product-card">
-          <div class="product-img-wrap">
-            <!-- <img src="jeera-cookies.jpg" alt="Jeera Crunch Cookies" /> -->
-            <div class="product-placeholder">
-              Jeera cookies ka photo (jeera-cookies.jpg)
-            </div>
-          </div>
-          <div class="product-name">Jeera Crunch Cookies</div>
-          <div class="product-desc">
-            Light, crispy aur thoda sa namkeen jeera flavour. Coaching break ya office chai time ke liye best.
-          </div>
-          <div class="product-meta">
-            <span class="price">₹149</span>
-            <span class="weight">250 g pack</span>
-          </div>
-          <div class="product-tagline">Roz ke liye pocket friendly option.</div>
-          <div class="product-actions">
-            <button class="btn-buy"
-              onclick="openWhatsAppProduct('Jeera Crunch Cookies', '250 g pack', 149)">
-              🛒 Order on WhatsApp
-            </button>
-            <span class="min-order">Min: 2 pack</span>
-          </div>
-        </div>
+<section id="about">
+  <h2>About Krishna Fasion</h2>
+  <p>Krishna Fasion ek trusted online clothing store hai jahan aapko trendy T‑shirts, stylish jeans aur beautiful sarees best price me milti hain. Hum quality par 100% focus karte hain aur har product ko personally check karte hain. Aap WhatsApp par direct order kar sakte hain. Fast delivery, easy exchange aur friendly support hamari priority hai.</p>
+</section>
 
-        <!-- PRODUCT 4 -->
-        <div class="product-card">
-          <div class="product-img-wrap">
-            <!-- <img src="atta-jaggery.jpg" alt="Atta &amp; Jaggery Cookies" /> -->
-            <div class="product-placeholder">
-              Atta &amp; jaggery cookies photo (atta-jaggery.jpg)
-            </div>
-          </div>
-          <div class="product-name">Atta &amp; Jaggery Cookies</div>
-          <div class="product-desc">
-            Maida-free, gud se halka meetha – health conscious logon ke liye taste aur care ka perfect balance.
-          </div>
-          <div class="product-meta">
-            <span class="price">₹219</span>
-            <span class="weight">300 g jar</span>
-          </div>
-          <div class="product-tagline">Office desk / gifting jars ke liye best choice.</div>
-          <div class="product-actions">
-            <button class="btn-buy"
-              onclick="openWhatsAppProduct('Atta & Jaggery Cookies', '300 g jar', 219)">
-              🛒 Order on WhatsApp
-            </button>
-            <span class="min-order">Min: 1 jar</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<footer>
+  © 2025 Krishna Fasion. All Rights Reserved.
+</footer>
 
-    <!-- ABOUT -->
-    <section id="about">
-      <div class="section-header">
-        <div class="section-title">👩‍🍳 About Desi Swad</div>
-      </div>
-
-      <div class="about-grid">
-        <div class="card">
-          <h3>Ghar se shuru hua, taste se grow hua</h3>
-          <p>
-            Desi Swad ek home-based bakery hai jahan har cookie <strong>fresh batch</strong> me banai jati hai.
-            Yahan focus hai:
-          </p>
-          <ul>
-            <li>High-quality ingredients (branded butter, cocoa, flour)</li>
-            <li>Bilkul clean &amp; hygienic kitchen setup</li>
-            <li>Har order ke hisaab se chhota batch baking</li>
-          </ul>
-          <div class="badge-list">
+</body>
+</html>
